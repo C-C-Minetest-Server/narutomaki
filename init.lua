@@ -24,6 +24,7 @@ minetest.register_craftitem("narutomaki:narutomaki", def)
 
 local insert = table.insert
 local fishes, flours = {}, {}
+local pink_dye
 
 if minetest.get_modpath("ethereal") then
 	insert(fishes, "group:food_fish_raw")
@@ -39,21 +40,24 @@ if minetest.get_modpath("mcl_farming") then
 	insert(flours, "mcl_farming:wheat_item")
 end
 
+if minetest.get_modpath("dye") then
+	pink_dye = "dye:pink"
+elseif minetest.get_modpath("mcl_dye") then
+	pink_dye = "mcl_dye:pink"
+end
+
 local use_technic = minetest.get_modpath("technic") and technic.register_alloy_recipe and true or false
 for _, fish in ipairs(fishes) do
 	for _, flour in ipairs(flours) do
-		if use_technic then
-			technic.register_alloy_recipe({
-				input = { fish, flour },
-				output = "narutomaki:narutomaki 2",
-				time = 2,
-			})
-		else
-			minetest.register_craft({
-				type = "shapeless",
-				recipe = { fish, flour },
-				output = "narutomaki:narutomaki 2",
-			})
+		local recipe = { fish, flour }
+		if pink_dye then
+			insert(recipe, pink_dye)
 		end
+
+		minetest.register_craft({
+			type = "shapeless",
+			recipe = recipe,
+			output = "narutomaki:narutomaki 2",
+		})
 	end
 end

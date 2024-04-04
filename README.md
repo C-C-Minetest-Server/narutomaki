@@ -1,6 +1,6 @@
 # Narutomaki!
 
-The delicious narutomaki! Crafted from fish and flour, depending on what mod you have.
+The delicious narutomaki! Crafted from fish, flour and pink dye, depending on what mod you have.
 
 Fish mods: [Ethereal NG](https://content.minetest.net/packages/TenPlus1/ethereal/), or [MineClone2 game](https://content.minetest.net/packages/Wuzzy/mineclone2/)
 
