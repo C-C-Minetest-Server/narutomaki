@@ -46,7 +46,6 @@ elseif minetest.get_modpath("mcl_dye") then
 	pink_dye = "mcl_dye:pink"
 end
 
-local use_technic = minetest.get_modpath("technic") and technic.register_alloy_recipe and true or false
 for _, fish in ipairs(fishes) do
 	for _, flour in ipairs(flours) do
 		local recipe = { fish, flour }
