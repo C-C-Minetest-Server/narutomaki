@@ -1,0 +1,5 @@
+# textdomain: narutomaki
+
+##[ .cdb_i18n.lua ]##
+Narutomaki=
+Delicious Narutomaki!=
